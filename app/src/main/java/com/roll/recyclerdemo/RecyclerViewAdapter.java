@@ -15,11 +15,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context mContext;
     private ArrayList<String> mTextos;
+    private ArrayList<String> mDates;
 
     //Se crea un constructor
-    public RecyclerViewAdapter(Context context, ArrayList<String> textos) {
+    public RecyclerViewAdapter(Context context, ArrayList<String> textos, ArrayList<String> dates) {
         mContext = context;
         mTextos = textos;
+        mDates = dates;
     }
 
     @NonNull
@@ -34,6 +36,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.mTextView.setText(mTextos.get(position));
+        holder.mTextViewDates.setText((mDates.get(position)));
     }
 
     @Override
@@ -48,10 +51,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         // Declarar lo que contendrá cada item del recycler, en este caso solo está un TextView
         TextView mTextView;
+        TextView mTextViewDates;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mTextView = itemView.findViewById(R.id.recycler_item_tv);
+            mTextViewDates = itemView.findViewById(R.id.recycler_item_date);
         }
     }
 }

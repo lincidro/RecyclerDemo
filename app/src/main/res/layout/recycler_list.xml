@@ -5,6 +5,13 @@
     android:layout_height="wrap_content"
     android:id="@+id/recycler_xml">
 
+    <View
+        android:id="@+id/dummy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
+
     <TextView
         android:id="@+id/recycler_item_tv"
         android:layout_width="match_parent"
@@ -12,6 +19,19 @@
         android:paddingTop="15dp"
         android:text="This is a test"
         android:textSize="20sp"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:gravity="left"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/dummy"/>
+
+    <TextView
+        android:id="@+id/recycler_item_date"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:paddingTop="15dp"
+        android:text="Date"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_toRightOf="@id/recycler_item_tv"/>
 
 </RelativeLayout>
